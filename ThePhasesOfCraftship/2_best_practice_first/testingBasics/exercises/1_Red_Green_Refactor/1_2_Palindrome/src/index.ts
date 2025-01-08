@@ -1,3 +1,4 @@
 export const isPalindrome = (input: string): boolean => {
-    return input.toLowerCase() === input.toLowerCase().split('').reverse().join('')
+    const lowerCaseInput = input.toLowerCase();
+    return lowerCaseInput === lowerCaseInput.split('').reverse().join('')
 }
