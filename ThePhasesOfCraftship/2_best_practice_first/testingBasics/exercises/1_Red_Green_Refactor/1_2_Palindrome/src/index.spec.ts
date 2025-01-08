@@ -24,4 +24,8 @@ describe('palindrome checker', () => {
     it('should know that "xMomx" is a palindrome', () => {
         expect(isPalindrome('xMomx')).toBeTruthy();
     })
+
+    it('should know that "Was It A Rat I Saw" is a palindrome', () => {
+        expect(isPalindrome('Was It A Rat I Saw')).toBeTruthy();
+    })
 })
