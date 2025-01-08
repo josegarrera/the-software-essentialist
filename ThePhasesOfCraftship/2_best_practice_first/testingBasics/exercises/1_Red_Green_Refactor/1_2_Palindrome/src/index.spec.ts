@@ -1,43 +1,27 @@
 import {isPalindrome} from "./index";
 
 describe('palindrome checker', () => {
-    it('should know that "mom" is a palindrome', () => {
-        expect(isPalindrome('mom')).toBeTruthy();
+    const truthyCases: [string][] = [
+        ["mom"],
+        ["Mom"],
+        ["MoM"],
+        ["xMomx"],
+        ["Was It A Rat I Saw"],
+        ["Never Odd Or Even"]
+    ]
+
+    test.each(truthyCases)('should know that \"%s\" is a palindrome', (input:string,) => {
+        expect(isPalindrome(String(input))).toBeTruthy();
     })
 
-    it('should know that "Bill" is not a palindrome', () => {
-        expect(isPalindrome("Bill")).toBeFalsy();
-    })
+    const falsyCases: [string][] = [
+        ["Bill"],
+        ["Momx"],
+        ["Was It A Rat I Saw1"],
+        ["Never Odd Or Even1"]
+    ]
 
-    it('should know that "Mom" is a palindrome', () => {
-        expect(isPalindrome('Mom')).toBeTruthy();
-    })
-
-    it('should know that "MoM" is a palindrome', () => {
-        expect(isPalindrome('MoM')).toBeTruthy();
-    })
-
-    it('should know that "Momx" is not a palindrome', () => {
-        expect(isPalindrome("Momx")).toBeFalsy();
-    })
-
-    it('should know that "xMomx" is a palindrome', () => {
-        expect(isPalindrome('xMomx')).toBeTruthy();
-    })
-
-    it('should know that "Was It A Rat I Saw" is a palindrome', () => {
-        expect(isPalindrome('Was It A Rat I Saw')).toBeTruthy();
-    })
-
-    it('should know that "Never Odd Or Even" is a palindrome', () => {
-        expect(isPalindrome('Never Odd Or Even')).toBeTruthy();
-    })
-
-    it('should know that "Was It A Rat I Saw1" is not a palindrome', () => {
-        expect(isPalindrome("Was It A Rat I Saw1")).toBeFalsy();
-    })
-
-    it('should know that "Never Odd Or Even1" is not a palindrome', () => {
-        expect(isPalindrome("Never Odd Or Even1")).toBeFalsy();
+    test.each(falsyCases)('should know that \"%s\" is not a palindrome', (input:string,) => {
+        expect(isPalindrome(String(input))).toBeFalsy();
     })
 })
