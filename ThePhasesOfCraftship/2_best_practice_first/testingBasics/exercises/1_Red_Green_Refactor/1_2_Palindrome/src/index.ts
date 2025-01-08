@@ -1,4 +1,5 @@
 export const isPalindrome = (input: string): boolean => {
     const inputWithoutEmptySpaces = input.split(' ').join('');
-    return inputWithoutEmptySpaces.toLowerCase() === inputWithoutEmptySpaces.toLowerCase().split('').reverse().join('')
+    const reverseInput = (input: string): string => input.split('').reverse().join('');
+    return inputWithoutEmptySpaces.toLowerCase() === reverseInput(inputWithoutEmptySpaces).toLowerCase();
 }
