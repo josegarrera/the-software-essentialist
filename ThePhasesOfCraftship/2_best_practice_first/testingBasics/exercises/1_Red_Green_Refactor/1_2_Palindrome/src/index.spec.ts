@@ -32,4 +32,8 @@ describe('palindrome checker', () => {
     it('should know that "Never Odd Or Even" is a palindrome', () => {
         expect(isPalindrome('Never Odd Or Even')).toBeTruthy();
     })
+
+    it('should know that "Was It A Rat I Saw1" is not a palindrome', () => {
+        expect(isPalindrome("Was It A Rat I Saw1")).toBeFalsy();
+    })
 })
